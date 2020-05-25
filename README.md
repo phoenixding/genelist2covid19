@@ -58,7 +58,7 @@ Install from Github (recommended):
 python 3.6+: 
 
 ```shell
-	$sudo pip3 install --upgrade https://github.com/phoenixding/genelistcovid19/zipball/master
+	$sudo pip3 install --upgrade https://github.com/phoenixding/genelist2covid19/zipball/master
 ```
 
 
