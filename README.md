@@ -25,7 +25,7 @@
 <div style="text-align: justify"> 
 The outbreak of COVID19 has caused millions of infections globally and reshaped the living of people all over the world fundamentally.  
 Tremendous research efforts have been made on understanding the mechanisms of the infection and the spread of the SARS-CoV-2 Virus. 
-Recently, a comprehensive interactome map between the SARS-CoV-2 proteins and the host human proteins were published. Such an interactome map provides an unprecedented opportunity for us to study the "connections" of the host human genes/proteins to SARS-CoV-2.   Here, we developed a network-based approach
+Recently, a comprehensive interactome map between the SARS-CoV-2 proteins and the host human proteins was published. Such an interactome map provides an unprecedented opportunity for us to study the "connections" of the host human genes/proteins to SARS-CoV-2.   Here, we developed a network-based approach
 GeneList2COVID19 to investigate whether a list of genes is "significantly" connected to the SARS-CoV-2 (comparing with all background genes).  
 The method can further provide the detailed paths that connect the input genes to the SARS-CoV-2 viral proteins. 
 We believe that this tool can provide hints about the potential "connection/association" for any given list of genes, which will facilitate our understanding 
