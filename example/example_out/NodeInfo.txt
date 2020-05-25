@@ -1,0 +1,37 @@
+Node	Type
+SARS-CoV2 orf3a	virus
+SUN2	source
+LMNA	Intermediate
+UNC13D	target
+SARS-CoV2 nsp13	virus
+TBK1	source
+STX11	target
+SARS-CoV2 nsp13	virus
+TBK1	source
+STX3	Intermediate
+STXBP2	target
+SARS-CoV2 nsp7	virus
+RAB8A	source
+SYTL4	Intermediate
+RAB27A	target
+SARS-CoV2 N	virus
+CSNK2B	source
+LYST	target
+SARS-CoV2 E	virus
+AP3B1	source
+SARS-CoV2 nsp10	virus
+AP2M1	source
+LY9	Intermediate
+SH2D1A	target
+SARS-CoV2 nsp13	virus
+TBK1	source
+XIAP	target
+SARS-CoV2 N	virus
+G3BP1	source
+ITK	target
+SARS-CoV2 M	virus
+COQ8B	source
+CD27	target
+SARS-CoV2 N	virus
+MOV10	source
+MAGT1	target
