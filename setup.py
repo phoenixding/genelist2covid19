@@ -10,7 +10,7 @@ setup(  name='GeneList2COVID19',
 		license='MIT',
 		packages=['GeneList2COVID19'],
 		entry_points={'console_scripts':['GeneList2COVID19=GeneList2COVID19.GeneList2COVID19:main']},
-		install_requires=['scipy>=1.4.1','numpy>=1.18.4','matplotlib>=3.2.1','seaborn>=0.10.1','networkx>=2.4'],
+		install_requires=['scipy>=1.4.1','numpy>=1.18.4','matplotlib>=3.2.1','seaborn>=0.10.1','networkx>=2.4','pandas>=1.0.3'],
 		classifiers=[
 			'License :: OSI Approved :: MIT License',
 			'Programming Language :: Python :: 3',

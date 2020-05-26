@@ -11,6 +11,7 @@ from scipy.stats import mannwhitneyu
 import seaborn as sns
 import argparse
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # get all the nodes from the input list: X
 def getNodes(X):
@@ -131,7 +132,6 @@ def main():
 			SPaths.append([i,j,sij,uij])
 			print(j)
 		
-	
 	AllProteins=list(set(AllProteins))
 	outEdges=extractEdges(AllProteins,AEdges)
 	network=[]
@@ -176,7 +176,9 @@ def main():
 	pv1=mannwhitneyu(SPath,APath,alternative='less')
 	print("p-value: %s"%(pv1[1]))
 	XX=[SPath,APath]
-
+	#df=pd.DataFrame(data=XX)
+	#df.index=['HLH Genes','All Genes']
+	
 	if os.path.exists(output)==False:
 		os.mkdir(output)
 		
@@ -188,7 +190,9 @@ def main():
 	BioList(network).ex2File("%s/network.sif"%(output),'\t')
 	print("exporting network node attribute file (.txt)")
 	BioList(NodeInfo).ex2File("%s/NodeInfo.txt"%(output),'\t')
-	plt.boxplot(XX)
+	sns.boxplot(data=XX)
+	plt.xticks(range(len(XX)),labels=['Input Genes','All Genes'])
+	plt.ylabel("Connectivity Score")
 	plt.savefig("%s/%s_Connectivity.pdf"%(output,fnMarker))
 	
 if __name__=="__main__":
