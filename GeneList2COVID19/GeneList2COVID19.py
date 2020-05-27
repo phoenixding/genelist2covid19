@@ -90,7 +90,8 @@ def main():
 	PPI=[[item[0],item[2],item[3]] for item in PPI]
 	# read in markers
 	markers=LineFile(fnMarker).read()
-
+	markers=[item for item in markers if item!='']
+	
 	print("building protein networks ...")
 	AllNodes=getNodes(COVInteractions)+getNodes(PPI)+getNodes(markers)
 	AllNodes=list(set(AllNodes))
@@ -118,19 +119,20 @@ def main():
 	AllUProteins=[]
 	for i in source:
 		for j in targets:
-			pij_all=nx.all_shortest_paths(G,i,j)
-			sij_all=[]
-			for pijk in pij_all:
-				sijk=getScore(G,pijk)
-				sij_all.append([sijk,pijk])
-			sij_all=sorted(sij_all,key=lambda x:x[0])
-			[sij,pij]=sij_all[0]
-			
-			AllProteins+=pij
-			uij=dCI[pij[0]+','+pij[1]]+pij[2:]
-			AllUProteins+=uij
-			SPaths.append([i,j,sij,uij])
-			print(j)
+			if nx.has_path(G,i,j):
+				pij_all=nx.all_shortest_paths(G,i,j)
+				sij_all=[]
+				for pijk in pij_all:
+					sijk=getScore(G,pijk)
+					sij_all.append([sijk,pijk])
+				sij_all=sorted(sij_all,key=lambda x:x[0])
+				[sij,pij]=sij_all[0]
+				
+				AllProteins+=pij
+				uij=dCI[pij[0]+','+pij[1]]+pij[2:]
+				AllUProteins+=uij
+				SPaths.append([i,j,sij,uij])
+				print(j)
 		
 	AllProteins=list(set(AllProteins))
 	outEdges=extractEdges(AllProteins,AEdges)
@@ -193,7 +195,7 @@ def main():
 	sns.boxplot(data=XX)
 	plt.xticks(range(len(XX)),labels=['Input Genes','All Genes'])
 	plt.ylabel("Connectivity Score")
-	plt.savefig("%s/%s_Connectivity.pdf"%(output,fnMarker))
+	plt.savefig("%s/Connectivity.pdf"%(output))
 	
 if __name__=="__main__":
 	main()

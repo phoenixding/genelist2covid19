@@ -46,7 +46,8 @@ instructions.
 	--numpy>=1.18.4  
 	--matplotlib>=3.2.1  
 	--seaborn>=0.10.1  
-	--networkx>=2.4  
+	--networkx>=2.4   
+	--pandas>=1.0.3   
 
 The python setup.py script (or pip) will try to install these packages automatically.
 However, please install them manually if, by any reason, the automatic 
