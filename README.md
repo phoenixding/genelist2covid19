@@ -28,7 +28,7 @@ Tremendous research efforts have been made on understanding the mechanisms of th
 Recently, a comprehensive interactome map between the SARS-CoV-2 proteins and the host human proteins was published. Such an interactome map provides an unprecedented opportunity for us to study the "connections" of the host human genes/proteins to SARS-CoV-2.   Here, we developed a network-based approach
 GeneList2COVID19 to investigate whether a list of genes is "significantly" connected to the SARS-CoV-2 (comparing with all background genes).  
 The method can further provide the detailed paths that connect the input genes to the SARS-CoV-2 viral proteins. 
-We believe that this tool can provide hints about the potential "connection/association" for any given list of genes, which will facilitate our understanding 
+We believe that this tool can analyze the potential COVID19 "connection/association" for any given list of genes, which will facilitate our understanding 
 of the roles of host genes in the SARS-CoV-2 viral infection process and thus bring advancement to the drug, vaccine, and other treatment strategies.   
 </div>  
 
