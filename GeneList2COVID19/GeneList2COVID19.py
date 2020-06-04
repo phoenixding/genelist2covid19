@@ -12,6 +12,7 @@ import seaborn as sns
 import argparse
 import matplotlib.pyplot as plt
 import pandas as pd
+import random 
 
 # get all the nodes from the input list: X
 def getNodes(X):
@@ -93,8 +94,14 @@ def main():
 	markers=[item for item in markers if item!='']
 	
 	print("building protein networks ...")
-	AllNodes=getNodes(COVInteractions)+getNodes(PPI)+getNodes(markers)
-	AllNodes=list(set(AllNodes))
+	AllN=getNodes(COVInteractions)+getNodes(PPI)+markers
+	
+	AllNodes=[]
+	for i in AllN:
+		if i not in AllNodes:
+			AllNodes.append(i)
+			
+	#AllNodes=list(set(AllN))
 	AEdges=getEdges(COVInteractions+PPI)
 	AllEdges={}
 	for i in AEdges:
@@ -111,7 +118,7 @@ def main():
 		[A,B]=i.split(',')
 		si=AllEdges[i]
 		G.add_edge(A,B,weight=si)
-
+		
 	print("learning optimal path from SARS-CoV-2 to input genes ...")
 	targets=markers
 	SPaths=[]
@@ -159,8 +166,15 @@ def main():
 	print("finding the optimal paths from SARS-CoV-2 proteins to all host proteins")
 	APaths=[]
 	ct=0
+	
+	# fix the random initialization 
+	
+	random.seed(a=10)
+	bgNodes=random.sample(AllNodes[1:],bgN)
+	
+	
 	for i in source:
-		for j in AllNodes[:bgN]:
+		for j in bgNodes:
 			if nx.has_path(G,i,j):
 				pij_all=nx.all_shortest_paths(G,i,j)
 				sij_all=[]
