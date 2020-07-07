@@ -207,7 +207,7 @@ def main():
 	print("exporting network node attribute file (.txt)")
 	BioList(NodeInfo).ex2File("%s/NodeInfo.txt"%(output),'\t')
 	sns.boxplot(data=XX)
-	plt.xticks(range(len(XX)),labels=['Input Genes','All Genes'])
+	plt.xticks(range(len(XX)),['Input Genes','All Genes'])
 	plt.ylabel("Connectivity Score")
 	plt.savefig("%s/Connectivity.pdf"%(output))
 	
